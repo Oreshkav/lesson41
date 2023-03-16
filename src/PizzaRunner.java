@@ -19,7 +19,7 @@ public class PizzaRunner {
       System.out.print("  Введите вес в граммах (целое число): ");
       int weight = Integer.parseInt(br.readLine());
 
-      // изменила
+      // try catch с  checkErr для weight
 //      int weight = Integer.parseInt(br.readLine());
 //      try {
 //        Pizza.checkErr(weight);
@@ -30,11 +30,11 @@ public class PizzaRunner {
 
       try {
         Pizza tempPizza = new Pizza(title, weight);
+        pizzas.add(tempPizza);
       } catch (IncorrectWeightException e) {
         System.err.println("Вес должен быть целым числом! \n" + e.getMessage());
-        return;
       }
-      pizzas.add(tempPizza);
+
       // при проверке уникальности объекта Java сравнивает объекты через
       // метод equals().
       // Если "нашего" метода нет, то используется Object.equals().

@@ -1,12 +1,14 @@
-import exceptions.IllegalAge;
 
 public class Pizza {
 
   private String title;
   private int weight;
 
-  public Pizza(String title, int weight) {
+  public Pizza(String title, int weight) throws IncorrectWeightException{
     this.title = title;
+    if (weight < 0) {
+      throw new IncorrectWeightException(weight);
+    }
     this.weight = weight;
   }
 
@@ -43,7 +45,6 @@ public class Pizza {
     return 31 * weight * title.hashCode();
   }
 
-  // изменила
   public static void checkErr(int weight) throws IncorrectWeightException {
     throw new IncorrectWeightException(weight);
   }
