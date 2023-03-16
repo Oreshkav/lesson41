@@ -17,18 +17,25 @@ public class PizzaRunner {
       System.out.print("  Введите название: ");
       String title = br.readLine();
       System.out.print("  Введите вес в граммах (целое число): ");
+      int weight = Integer.parseInt(br.readLine());
 
       // изменила
-      int weight = Integer.parseInt(br.readLine());
+//      int weight = Integer.parseInt(br.readLine());
+//      try {
+//        Pizza.checkErr(weight);
+//      } catch (IncorrectWeightException e) {
+//        System.err.println("Вес должен быть целым числом! \n" + e.getMessage());
+//        return;
+//      }
+
       try {
-        Pizza.checkErr(weight);
+        Pizza tempPizza = new Pizza(title, weight);
       } catch (IncorrectWeightException e) {
         System.err.println("Вес должен быть целым числом! \n" + e.getMessage());
         return;
       }
-
-      Pizza tempPizza = new Pizza(title, weight);
-      pizzas.add(tempPizza); // при проверке уникальности объекта Java сравнивает объекты через
+      pizzas.add(tempPizza);
+      // при проверке уникальности объекта Java сравнивает объекты через
       // метод equals().
       // Если "нашего" метода нет, то используется Object.equals().
       // Object.equals() сравнивает ССЫЛКИ - если в памяти это два разных объекта (созданных через
