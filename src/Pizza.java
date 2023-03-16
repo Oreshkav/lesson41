@@ -43,6 +43,7 @@ public class Pizza {
     return 31 * weight * title.hashCode();
   }
 
+  // изменила
   public static void checkErr(int weight) throws IncorrectWeightException {
     throw new IncorrectWeightException(weight);
   }

@@ -18,11 +18,12 @@ public class PizzaRunner {
       String title = br.readLine();
       System.out.print("  Введите вес в граммах (целое число): ");
 
-      int weight = Integer.parseInt(br.readLine()) ;
+      // изменила
+      int weight = Integer.parseInt(br.readLine());
       try {
         Pizza.checkErr(weight);
       } catch (IncorrectWeightException e) {
-        System.err.println("Вес должен быть целым числом!" + e.getMessage());
+        System.err.println("Вес должен быть целым числом! \n" + e.getMessage());
         return;
       }
 
