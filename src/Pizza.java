@@ -44,11 +44,4 @@ public class Pizza {
     // это значит, что мы должны учитывать все поля, которые сравниваются в equals() (и только их)
     return 31 * weight * title.hashCode();
   }
-
-  // try catch с  checkErr для weight в PizzaRunner
-  public static void checkError(int weight) throws checkErr {
-    if (weight < 0) {
-      throw new checkErr(weight);
-    }
-  }
 }

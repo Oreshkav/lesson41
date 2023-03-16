@@ -19,11 +19,11 @@ public class PizzaRunner {
       System.out.print("  Введите вес в граммах (целое число): ");
       int weight = Integer.parseInt(br.readLine());
 
-      // try catch с  checkErr для weight
+//      // try catch с  checkErr для weight
 //      int weight;
 //      try {
 //        weight = Integer.parseInt(br.readLine());
-//        Pizza.checkError(weight);
+//        checkErr.checkError(weight);
 //      } catch (checkErr e) {
 //        System.err.println("Ошибка через checkError()! - " + e.getMessage());
 //        return;
