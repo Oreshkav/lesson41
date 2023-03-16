@@ -20,11 +20,12 @@ public class PizzaRunner {
       int weight = Integer.parseInt(br.readLine());
 
       // try catch с  checkErr для weight
-//      int weight = Integer.parseInt(br.readLine());
+//      int weight;
 //      try {
-//        Pizza.checkErr(weight);
-//      } catch (IncorrectWeightException e) {
-//        System.err.println("Вес должен быть целым числом! \n" + e.getMessage());
+//        weight = Integer.parseInt(br.readLine());
+//        Pizza.checkError(weight);
+//      } catch (checkErr e) {
+//        System.err.println("Ошибка через checkError()! - " + e.getMessage());
 //        return;
 //      }
 
@@ -32,7 +33,7 @@ public class PizzaRunner {
         Pizza tempPizza = new Pizza(title, weight);
         pizzas.add(tempPizza);
       } catch (IncorrectWeightException e) {
-        System.err.println("Вес должен быть целым числом! \n" + e.getMessage());
+        System.err.println("ПРОВЕРЬТЕ! " + e.getMessage());
       }
 
       // при проверке уникальности объекта Java сравнивает объекты через

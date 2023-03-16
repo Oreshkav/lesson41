@@ -45,7 +45,10 @@ public class Pizza {
     return 31 * weight * title.hashCode();
   }
 
-  public static void checkErr(int weight) throws IncorrectWeightException {
-    throw new IncorrectWeightException(weight);
+  // try catch с  checkErr для weight в PizzaRunner
+  public static void checkError(int weight) throws checkErr {
+    if (weight < 0) {
+      throw new checkErr(weight);
+    }
   }
 }
